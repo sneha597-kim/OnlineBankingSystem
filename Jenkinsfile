@@ -17,12 +17,12 @@ pipeline {
             }
         }
 
-        stage('Run Containers') {
-            steps {
-                echo 'Running all services...'
-                sh 'docker-compose up -d'
-            }
-        }
+     stage('Build Docker Images') {
+    steps {
+        echo 'Building Docker images for all microservices...'
+        bat 'docker build -t banking-app .'
+    }
+}
     }
 
     post {

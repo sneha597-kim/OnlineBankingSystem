@@ -26,16 +26,20 @@ pipeline {
             }
         }*/
 
-        stage('Run Containers') {
-            steps {
-                echo '🚀 Running all containers...'
-                bat '''
-                    docker run -d --name auth-service -p 5001:5000 auth-service
-                    docker run -d --name account-service -p 5002:5000 account-service
-                    docker run -d --name transaction-service -p 5003:5000 transaction-service
-                '''
-            }
-        }
+       stage('Run Containers') {
+    steps {
+        echo '🚀 Running all containers...'
+        bat '''
+        docker rm -f auth-service || true
+        docker rm -f account-service || true
+        docker rm -f transaction-service || true
+        
+        docker run -d --name auth-service -p 5001:5000 auth-service
+        docker run -d --name account-service -p 5002:5000 account-service
+        docker run -d --name transaction-service -p 5003:5000 transaction-service
+        '''
+    }
+}
     }
 
     post {

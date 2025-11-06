@@ -1,20 +1,33 @@
-version: "3.9"
+version: '3.8'
 services:
   auth-service:
     build: ./auth-service
     ports:
-      - "5000:5000"
-  
+      - "5001:5000"
+    container_name: auth-service
+    networks:
+      - bank-network
+
   account-service:
     build: ./account-service
     ports:
-      - "5001:5001"
+      - "5002:5000"
+    container_name: account-service
     depends_on:
       - auth-service
-  
+    networks:
+      - bank-network
+
   transaction-service:
     build: ./transaction-service
     ports:
-      - "5002:5002"
+      - "5003:5000"
+    container_name: transaction-service
     depends_on:
       - account-service
+    networks:
+      - bank-network
+
+networks:
+  bank-network:
+    driver: bridge

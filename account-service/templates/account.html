@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Account Dashboard</title>
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: url('https://img.freepik.com/premium-vector/financial-banking-technology-concept_387612-31.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  color: white;
+  backdrop-filter: blur(8px);
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #00aaff;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.card {
+  width: 300px;
+  height: 200px;
+  border-radius: 15px;
+  background: url('https://static.vecteezy.com/system/resources/previews/026/827/699/non_2x/banking-technology-concept-design-vector.jpg') no-repeat center center/cover;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+h2 {
+  text-shadow: 1px 1px 3px #000;
+}
+</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><strong>Online Banking System</strong></div>
+    <div>
+      <a href="http://127.0.0.1:5000/home">Home</a>
+      <a href="{{ url_for('account') }}">Account</a>
+      <a href="http://127.0.0.1:5002/">Transactions</a>
+      <a href="http://127.0.0.1:5000/logout">Logout</a>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="container">
+    <div class="card" onclick="location.href='/add_account'">
+      <h2>Add Account Details</h2>
+    </div>
+    <div class="card" onclick="location.href='/view_accounts'">
+      <h2>View Account Details</h2>
+    </div>
+  </div>
+
+</body>
+</html>

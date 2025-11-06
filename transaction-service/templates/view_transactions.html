@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Transaction History</title>
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('https://img.freepik.com/premium-vector/financial-banking-technology-concept_387612-31.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  color: white;
+  padding: 40px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(0,0,0,0.6);
+  border-radius: 10px;
+  overflow: hidden;
+}
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: #0078ff;
+}
+tr:nth-child(even) {
+  background-color: rgba(255,255,255,0.1);
+}
+a {
+  display: inline-block;
+  margin-bottom: 20px;
+  background-color: #0078ff;
+  padding: 8px 15px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  background-color: #005fcc;
+}
+</style>
+</head>
+<body>
+  <a href="/transactions_home">⬅ Back</a>
+  <h2>📜 Transaction History</h2>
+  {% if transactions %}
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Type</th>
+      <th>Amount</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Status</th>
+    </tr>
+    {% for t in transactions %}
+    <tr>
+      <td>{{ t.date }}</td>
+      <td>{{ t.type }}</td>
+      <td>{{ t.amount }}</td>
+      <td>{{ t.from_account }}</td>
+      <td>{{ t.to_account }}</td>
+      <td>{{ t.status }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+  <p>No transactions found.</p>
+  {% endif %}
+</body>
+</html>

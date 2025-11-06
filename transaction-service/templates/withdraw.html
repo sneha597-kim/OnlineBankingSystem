@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Withdraw Money</title>
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('https://img.freepik.com/premium-vector/financial-banking-technology-concept_387612-31.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.container {
+  background: rgba(0,0,0,0.65);
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  text-align: center;
+}
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+button {
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+button:hover {
+  background-color: #005fcc;
+}
+a {
+  color: #00bfff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>💸 Withdraw Money</h2>
+    <form action="/withdraw" method="POST">
+      <input type="text" name="account_number" placeholder="Account Number" required><br>
+      <input type="number" name="amount" placeholder="Amount" required><br>
+      <input type="password" name="pin" placeholder="PIN" required><br>
+      <button type="submit">Withdraw</button>
+    </form>
+    <br>
+    <a href="/transactions_home">⬅ Back</a>
+  </div>
+</body>
+</html>

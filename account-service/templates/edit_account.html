@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Edit Account</title>
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('https://img.freepik.com/premium-vector/financial-banking-technology-concept_387612-31.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px 50px;
+  border-radius: 16px;
+  width: 500px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.5s ease;
+}
+
+h2 {
+  text-align: center;
+  color: #00bfff;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #fff;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0078ff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #005fcc;
+}
+
+a.back {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #00bfff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a.back:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Edit Account</h2>
+  <form method="POST">
+    <label>Full Name</label>
+    <input type="text" name="fullname" value="{{ account.fullname }}" required>
+
+    <label>Username</label>
+    <input type="text" name="username" value="{{ account.username }}" required>
+
+    <label>Email</label>
+    <input type="email" name="email" value="{{ account.email }}" required>
+
+    <label>Phone</label>
+    <input type="text" name="phone" value="{{ account.phone }}" required>
+
+    <label>Date of Birth</label>
+    <input type="date" name="dob" value="{{ account.dob }}" required>
+
+    <label>Gender</label>
+    <select name="gender" required>
+      <option value="Male" {% if account.gender == 'Male' %}selected{% endif %}>Male</option>
+      <option value="Female" {% if account.gender == 'Female' %}selected{% endif %}>Female</option>
+      <option value="Other" {% if account.gender == 'Other' %}selected{% endif %}>Other</option>
+    </select>
+
+    <label>Address</label>
+    <input type="text" name="address" value="{{ account.address }}" required>
+
+    <label>Account Number</label>
+    <input type="text" name="account_number" value="{{ account.account_number }}" readonly>
+
+    <label>Account Type</label>
+    <select name="account_type" required>
+      <option value="Savings" {% if account.account_type == 'Savings' %}selected{% endif %}>Savings</option>
+      <option value="Current" {% if account.account_type == 'Current' %}selected{% endif %}>Current</option>
+      <option value="Salary" {% if account.account_type == 'Salary' %}selected{% endif %}>Salary</option>
+    </select>
+
+    <label>Branch</label>
+    <input type="text" name="branch" value="{{ account.branch }}" required>
+
+    <label>IFSC</label>
+    <input type="text" name="ifsc" value="{{ account.ifsc }}" required>
+
+    <label>PIN</label>
+    <input type="password" name="pin" value="{{ account.pin }}" required>
+
+    <button type="submit">Update Account</button>
+  </form>
+
+  <a href="{{ url_for('view_accounts') }}" class="back">⬅ Back to Accounts</a>
+</div>
+
+</body>
+</html>

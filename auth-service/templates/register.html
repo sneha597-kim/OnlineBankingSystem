@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Online Banking</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://img.freepik.com/premium-vector/financial-banking-technology-concept_387612-31.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  width: 350px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 25px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #0078ff;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #005fcc;
+}
+
+a {
+  display: block;
+  margin-top: 15px;
+  color: #00bfff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.msg {
+  margin-top: 10px;
+  font-weight: 600;
+}
+.msg.success {
+  color: #00ff7f;
+}
+.msg.error {
+  color: #ff4747;
+}
+</style>
+</head>
+<body>
+<div class="register-container">
+  <h2>Create Account</h2>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <p class="msg {{ category }}">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form action="/register" method="post">
+    <input type="text" name="fullname" placeholder="Full Name" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="text" name="username" placeholder="Username" required><br>
+    <input type="password" name="password" placeholder="Password" required><br>
+    <button type="submit">Register</button>
+  </form>
+  <a href="/login">Already have an account? Login here</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Banking System</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://img.freepik.com/premium-vector/financial-banking-technology-concept_387612-31.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+button {
+  margin: 15px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background-color: #0078ff;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #005fcc;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Welcome to Online Banking System</h1>
+  <p>Secure. Reliable. Smart Banking at your fingertips.</p>
+  <button onclick="window.location.href='/login'">Login</button>
+  <button onclick="window.location.href='/register'">Register</button>
+</div>
+</body>
+</html>

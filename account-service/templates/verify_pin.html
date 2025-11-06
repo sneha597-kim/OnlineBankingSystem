@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Verify PIN</title>
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('https://img.freepik.com/premium-vector/financial-banking-technology-concept_387612-31.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px 50px;
+  border-radius: 16px;
+  width: 400px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+h2 {
+  text-align: center;
+  color: #00bfff;
+  margin-bottom: 20px;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  background: rgba(255,255,255,0.9);
+  font-size: 15px;
+}
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #0078ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: #005fcc;
+}
+a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #00bfff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>🔐 Verify PIN</h2>
+    <form method="POST">
+      <input type="password" name="verify_pin" placeholder="Enter your PIN" required>
+      <button type="submit">Verify</button>
+    </form>
+    <a href="{{ url_for('view_accounts') }}">⬅ Back</a>
+  </div>
+</body>
+</html>

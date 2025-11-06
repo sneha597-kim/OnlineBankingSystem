@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/yourusername/online-banking-system.git'
+                git branch: 'main', url: 'https://github.com/sneha597-kim/OnlineBankingSystem.git'
             }
         }
 

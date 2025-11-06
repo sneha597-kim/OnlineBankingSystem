@@ -19,12 +19,12 @@ pipeline {
             }
         }
 
-        stage('Build Main App Image') {
+       /* stage('Build Main App Image') {
             steps {
                 echo '🏗️ Building main banking app image...'
                 bat 'docker build -t banking-app .'
             }
-        }
+        }*/
 
         stage('Run Containers') {
             steps {

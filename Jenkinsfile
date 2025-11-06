@@ -33,7 +33,6 @@ pipeline {
                     docker run -d --name auth-service -p 5001:5000 auth-service
                     docker run -d --name account-service -p 5002:5000 account-service
                     docker run -d --name transaction-service -p 5003:5000 transaction-service
-                    //docker run -d --name banking-app -p 8080:8080 banking-app
                 '''
             }
         }

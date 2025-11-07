@@ -1,4 +1,4 @@
-/*pipeline {
+pipeline {
     agent any
 
     stages {
@@ -51,7 +51,7 @@
         }
     }
 }
-*/
+/*
 pipeline {
     agent any
 
@@ -110,4 +110,4 @@ pipeline {
             echo '❌ Pipeline failed!'
         }
     }
-}
+}*/
